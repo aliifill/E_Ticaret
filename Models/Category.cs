@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace E_Ticaret.Models
 {
@@ -7,7 +8,11 @@ namespace E_Ticaret.Models
         [Key]
         public int Id { get; set; }
         [Required]
+        [MaxLength(100)]
+        [DisplayName("Category Name")]
         public string Name { get; set; }
-        public string Description { get; set; }
+        [DisplayName("Dislplay Order")]
+        [Range(1,100)]
+        public string DisplayOrder { get; set; }
     }
 }
